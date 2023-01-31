@@ -3,7 +3,8 @@
 ## Get-CleanupjobTerminatestatus.sh
 
 Toont de backup cleanup jobs met hun exit status in de huidige namespace.
-```./Get-CleanupjobTerminatestatus.sh 
+```
+$ ./Get-CleanupjobTerminatestatus.sh 
 Name                                    startedAt             finishedAt            exitCode
 postgres-backup-cleanup-27915780-ktwvf  2023-01-28T23:00:07Z  2023-01-28T23:00:07Z  0
 postgres-backup-cleanup-27917220-dfgl6  2023-01-29T23:00:07Z  2023-01-29T23:00:07Z  0
@@ -12,7 +13,8 @@ postgres-backup-cleanup-27918660-tdm9z  2023-01-30T23:00:16Z  2023-01-30T23:00:1
 
 ## kubectl-jobs.fmt
 Toont de jobs, stijd- stoptijd en exit status
-```kgj -o custom-columns-file=kubectl-jobs.fmt       
+```
+$ kgj -o custom-columns-file=kubectl-jobs.fmt       
 JOB                                START                  STOP                   SUCCEEDED
 cvgg-test                          2023-01-31T12:29:46Z   2023-01-31T13:04:01Z   1
 postgres-backup-27915720           2023-01-28T22:00:00Z   2023-01-28T22:00:19Z   1
@@ -28,7 +30,8 @@ postgres-backup2                   2022-07-05T12:21:41Z   2022-07-05T12:21:54Z  
 
 ## pod-nodes.fmt
 Toont de pods en hun worker nodes, status en starttijd.
-```oc get pods -o custom-columns-file=pod-nodes.fmt
+```
+$ oc get pods -o custom-columns-file=pod-nodes.fmt
 POD                                      NODE                               STATUS      RESTARTS   STARTTIME
 cvgg-authorization-975b4467-tb248        test4-gn2-worker-m-xl-gn2b-ffzc5   Running     0          2023-01-17T10:31:26Z
 cvgg-database-statefulset-0              test4-gn2-worker-m-xl-gn2a-27ghn   Running     0          2022-11-07T18:30:26Z
