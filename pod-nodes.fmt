@@ -1,0 +1,2 @@
+POD NODE STATUS RESTARTS STARTTIME
+.metadata.name .spec.nodeName .status.phase .status.containerStatuses[0].restartCount .status.startTime
