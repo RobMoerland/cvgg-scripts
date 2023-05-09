@@ -1,0 +1,2 @@
+Name                                    startedAt             finishedAt            exitCode
+.metadata.name .status.containerStatuses[0].state.terminated.startedAt .status.containerStatuses[0].state.terminated.finishedAt .status.containerStatuses[0].state.terminated.exitCode
