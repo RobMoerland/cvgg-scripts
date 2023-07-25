@@ -1,35 +1,42 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 GREEN="\e[32m"
 RED="\e[41m"
 ENDCOLOR="\e[0m"
 
-function pull() {
+function _pull() {
     git symbolic-ref --short HEAD
     git pull --all
 }
 
-dir=$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")
-pushd $dir > /dev/null
+# Change current directory to directory of script so it can be called from everywhere
+SCRIPT_PATH=$(readlink -f "${0}")
+SCRIPT_DIR=$(dirname "${SCRIPT_PATH}")
+pushd "${SCRIPT_DIR}" > /dev/null
 
+
+# Each subdirectory might be a repo
 for dir in */; do
 
   pushd $dir > /dev/null
 
-  if [ -d .git ]; then
+  # If it's a project pull all changes
+  if [[ -d .git ]]; then
     echo -en "[${GREEN}${dir}${ENDCOLOR}] "
-    pull
+    _pull
   else
-    subdircount=`find . -maxdepth 1 -type d | wc -l`
-
+    
+# Each subdirectory might be a repo
     for sub in */; do
-      [ ! -d $sub ] && continue
+      [[ ! -d $sub ]] && continue
 
       echo -en "[${GREEN}${dir}${sub}${ENDCOLOR}] "
 
       cd $sub >/dev/null
-      if [ -d .git ]; then
-        pull
+
+# Each subdirectory might be a repo
+      if [[ -d .git ]]; then
+        _pull
       else
         echo "not a repo"
       fi
