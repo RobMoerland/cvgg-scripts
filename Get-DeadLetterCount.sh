@@ -4,7 +4,7 @@ show_help() {
    BASENAME=`basename ${0}`
    cat 1>&2 << EOT
 Usage: $BASENAME [options]
-Get length of MQ queues. By default those having "failed" in its name.
+Get length of MQ queues. By default those having "failed" in their name.
 
 Options:
   -a, --all          Show length of all queues
@@ -59,5 +59,5 @@ for server in "${!servernames[@]}"
 do
    user=`echo ${servernames[$server]} | base64 -d`
    curl --silent --user ${user} https://${server}/api/queues/ | \
-   jq -c --arg server $server --arg filter $filter '.[] | select(.name | contains($filter)) | {server: $server, name, idle_since, len: (.backing_queue_status|.len)}'
+   jq -c --arg server $server --arg filter $filter '.[] | select(.name | contains($filter)) | {server: $server, name, len: (.backing_queue_status|.len)}'
 done
