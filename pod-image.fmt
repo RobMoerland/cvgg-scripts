@@ -1,0 +1,2 @@
+POD IMAGE IMAGEID
+.metadata.name .status.containerStatuses[0].image .status.containerStatuses[0].imageID
