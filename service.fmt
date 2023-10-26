@@ -1,0 +1,2 @@
+NAME LABELS.APP SELECTOR.APP PORTNAME
+.metadata.name .metadata.labels.app .spec.selector.app .spec.ports[0].name

@@ -1,0 +1,2 @@
+NAME LABEL-APP LABEL-INGRESS
+.metadata.name .metadata.labels.app .metadata.labels.ingress-controller-frontoffice-policy

@@ -1,0 +1,37 @@
+Context "rivm-cvg-ont/api-test4-gn2-overheid-sp-rijksapps-nl:6443/rob.moerland@rivm.nl" modified.
+Monitors
+========
+MONITOR                             SELECTOR                    PATH                                     PORT
+cvgg-authorization-service-monitor  cvgg-authorization-service  /actuator/prometheus                     web
+cvgg-filedownloads-service-monitor  cvgg-filedownloads-service  /cvgg-filedownloads/actuator/prometheus  web
+cvgg-fileuploads-service-monitor    cvgg-fileuploads-service    /cvgg-fileuploads/actuator/prometheus    web
+cvgg-intern-service-monitor         cvgg-intern-service         /actuator/prometheus                     web
+cvgg-messages-service-monitor       cvgg-messages-service       /cvgg-messages/actuator/prometheus       web
+
+Pods
+====
+NAME                                 READY  STATUS   RESTARTS  AGE
+cvgg-authorization-5f4bf48f89-xsw6g  1/1    Running  0         84m
+cvgg-filedownloads-c9b6c8cfd-7xr72   1/1    Running  0         5h48m
+cvgg-filedownloads-c9b6c8cfd-jj256   1/1    Running  0         5h47m
+cvgg-fileuploads-7769665bb5-hrqnd    1/1    Running  0         5h50m
+cvgg-fileuploads-7769665bb5-s5drw    1/1    Running  0         5h50m
+cvgg-intern-84444f6b5d-866jp         1/1    Running  0         169m
+cvgg-messages-6b7677fb75-hz48c       1/1    Running  0         4d5h
+
+Ingresses
+=========
+NAME                               HOST                                           PATH                 SERVICE                     PORT
+cvgg-authorization-intern-ingress  cvgg-authorization.rivm-cvg-ont.test4.s15m.nl  /                    cvgg-authorization-service  8080
+cvgg-filedownloads-intern-ingress  cvgg.rivm-cvg-ont.test4.s15m.nl                /cvgg-filedownloads  cvgg-filedownloads-service  8080
+cvgg-fileuploads-intern-ingress    cvgg.rivm-cvg-ont.test4.s15m.nl                /cvgg-fileuploads    cvgg-fileuploads-service    8080
+cvgg-intern-ingress                cvgg-intern.rivm-cvg-ont.test4.s15m.nl         /                    cvgg-intern-service         8080
+cvgg-messages-intern-ingress       cvgg.rivm-cvg-ont.test4.s15m.nl                /cvgg-messages       cvgg-messages-service       8080
+
+Prometheus
+==========
+eerste regel cvgg-authorization-service-monitor: # HELP executor_pool_core_threads The core number of threads for the pool
+eerste regel cvgg-filedownloads-service-monitor: # HELP jvm_buffer_total_capacity_bytes An estimate of the total capacity of the buffers in this pool
+eerste regel cvgg-fileuploads-service-monitor: # HELP application_ready_time_seconds Time taken for the application to be ready to service requests
+eerste regel cvgg-intern-service-monitor: # HELP executor_pool_max_threads The maximum allowed number of threads in the pool
+eerste regel cvgg-messages-service-monitor: # HELP tomcat_sessions_alive_max_seconds  

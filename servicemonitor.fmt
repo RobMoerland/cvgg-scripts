@@ -1,0 +1,3 @@
+NAME K8S-APP PATH PORT INTERVAL MATCHLABELS
+.metadata.name .metadata.labels.k8s-app .spec.endpoints[0].path .spec.endpoints[0].port .spec.endpoints[0].interval .spec.selector.matchLabels.app
+
