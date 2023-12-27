@@ -2,7 +2,7 @@
 
 zenity --question \
        --text "Open het Geluidsregister voor gebruik." \
-       --title "Centrale verwerking Geluidsgegevens" \
+       --title "Centrale Voorziening Geluidgegevens" \
        --width=300 
 
 if [[ $? == 0 ]]
