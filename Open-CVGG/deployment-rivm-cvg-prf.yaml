@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: cvgg-feature-toggles
+data:
+  # file-like keys
+  featureToggles.yaml: |
+    application:
+      featureToggles:
+        endEnabled: true
+        downloadsEnabled: true
+        geluidregisterEnabled: true
+        df7_10Enabled: false
+        downloadViaKaartEnabled: false

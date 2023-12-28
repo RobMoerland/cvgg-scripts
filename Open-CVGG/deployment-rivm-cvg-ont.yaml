@@ -8,7 +8,7 @@ data:
     application:
       featureToggles:
         endEnabled: true
-        downloadsEnabled: false
+        downloadsEnabled: true
         geluidregisterEnabled: true
-        df7_10Enabled: false
+        df7_10Enabled: true
         downloadViaKaartEnabled: true
